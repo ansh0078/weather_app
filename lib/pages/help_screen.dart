@@ -23,7 +23,7 @@ class HelpScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 140),
+                  padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 140),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -31,12 +31,19 @@ class HelpScreen extends StatelessWidget {
                         "We show weather for you",
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
-                      const Spacer(),
+                      const SizedBox(height: 30),
+                      Image.asset(
+                        "assets/weather_icon.png",
+                        fit: BoxFit.fill,
+                        height: 300,
+                        width: 250,
+                      ),
+                      const SizedBox(height: 50),
                       SlideAction(
                         height: 55,
                         text: " Slide To Skip",
-                        innerColor: Colors.orangeAccent,
-                        outerColor: Theme.of(context).colorScheme.primary,
+                        innerColor: Colors.white,
+                        outerColor: Colors.blueAccent,
                         onSubmit: () => Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => const HomePage()),
@@ -53,7 +60,7 @@ class HelpScreen extends StatelessWidget {
             ),
           );
         } else {
-          return const HomePage();
+          return HomePage();
         }
       },
     );
